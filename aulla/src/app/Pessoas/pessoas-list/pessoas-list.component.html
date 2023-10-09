@@ -1,0 +1,58 @@
+<p>pessoas-list works!</p>
+<table>
+    <tr>
+        <th>id:</th>
+        <th>Nome:</th>
+        <th>Idade:</th>
+    </tr>
+
+    <tr *ngFor="let pessoa of lista; let i = index">
+        <td>
+            {{pessoa.id}}
+        </td>
+        <td>
+            {{pessoa.nome}}
+        </td>
+        <td>
+            {{pessoa.idade}}
+        </td>
+    </tr>
+</table>
+
+<button (click)="abrirModal(abc)">Nova pessoa</button>
+<button (click)="abrirModal(cde)">editar pessoa</button>
+
+<ng-template #abc let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Modal title</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+
+    <div class="modal-body">
+
+        <app-pessoas-detail (retorno)="addNaLista($event)"></app-pessoas-detail>
+
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+
+<ng-template #cde let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Modal title2</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+
+    <div class="modal-body">
+
+        <app-pessoas-detail (retorno)="editNaLista($event)"></app-pessoas-detail>
+
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>

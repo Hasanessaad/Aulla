@@ -1,0 +1,56 @@
+<p>carros-list works!</p>
+<table>
+    <tr>
+        <th>id:</th>
+        <th>Nome:</th>
+        <th>ano:</th>
+    </tr>
+
+    <tr *ngFor="let carros of lista; let i = index">
+        <td *ngIf="carros.ano > 1900 && carros.ano <2000">
+            <p>
+                {{carros.id}}
+                {{carros.nome}}
+                {{carros.ano}}
+            </p>
+        </td>
+    </tr>
+</table>
+
+<button (click)="abrirModal(car1)" >Novo carro</button>
+<button (click)="abrirModal(car2)" >editar carro</button>
+
+<ng-template #car1 let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Modal title</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+
+   <div class="modal-body">
+    
+    <app-carros-detail (retorno)="addNaLista($event)" ></app-carros-detail>
+        
+</div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+
+<ng-template #car2 let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Modal title2</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+
+   <div class="modal-body">
+    
+    <app-carros-detail (retorno)="editNaLista($event)" ></app-carros-detail>>
+        
+</div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
