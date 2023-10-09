@@ -23,7 +23,6 @@ abrirModal(car1: any){
 }
 
 addNaLista(carros: Carros){
-  
   this.lista.push(carros);
   this.modalService.dismissAll();
 }

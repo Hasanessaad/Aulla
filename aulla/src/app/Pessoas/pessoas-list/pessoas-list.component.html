@@ -1,4 +1,6 @@
-<p>pessoas-list works!</p>
+<br>
+<br>
+<br>
 <table>
     <tr>
         <th>id:</th>
@@ -19,8 +21,16 @@
     </tr>
 </table>
 
-<button (click)="abrirModal(abc)">Nova pessoa</button>
-<button (click)="abrirModal(cde)">editar pessoa</button>
+<br>
+<br>
+<br>
+ 
+<div class="btns">
+    <div class="sep">
+        <button class="add" (click)="abrirModal(abc)">Nova pessoa</button>
+    </div>
+    <button class="add" (click)="abrirModal(cde)">editar pessoa</button>
+</div>
 
 <ng-template #abc let-modal>
     <div class="modal-header">
@@ -56,3 +66,6 @@
         <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
     </div>
 </ng-template>
+<br>
+<br>
+<br>

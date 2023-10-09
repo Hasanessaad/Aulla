@@ -16,3 +16,18 @@ table {
     padding: 8px;
     border-bottom: 1px solid #000000; /* Linha inferior das células de dados */
   }
+  .btns{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .add{
+    width: 170px;
+    height: 50px;
+    border-radius: 13px;
+    border: 1px black;
+    background-color: rgb(110, 239, 101);
+    color: black;
+    font-weight: bolder;
+    border-right:20px ;
+  }
+ 
